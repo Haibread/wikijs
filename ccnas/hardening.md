@@ -2,7 +2,7 @@
 title: Hardening device
 description: 
 published: true
-date: 2021-05-17T08:53:55.784Z
+date: 2021-05-17T08:55:21.414Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-17T08:38:53.446Z
@@ -56,3 +56,20 @@ access-class 12 in
 
 # Switch
 
+## Enable Portfast and BPDU Guard
+
+```
+interface range fastEthernet0/1-22
+spanning tree portfast
+spanning-tree bpguard enable
+```
+
+## Enable port security
+
+```
+interface range fastEthernet0/1-22
+switchport port-security
+switchport port-security violation shutdown
+switchport port-security mac-address sicky
+switchport port-security maximum 2
+```
