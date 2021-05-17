@@ -2,7 +2,7 @@
 title: Configure your devices
 description: 
 published: true
-date: 2021-05-17T09:18:28.374Z
+date: 2021-05-17T09:24:34.672Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-17T08:48:49.689Z
@@ -53,14 +53,25 @@ Timestamps to msec
 service timestamps log datetime msec
 ```
 
-## Connect to AAA
+## Configure AAA
+### With Radius
 
 ```
 aaa new-model
-radius-server hst 172.16.25.2 key corpradius
+radius-server host 172.16.25.2 key corpradius
 aaa autentication login default group radius local
 line vty 0 4
 login authentication default
+line console 0
+login authentication default
+```
+
+### With Tacacs
+```
+tacacs-server host 192.168.2.2
+tacacs-server key tacacspa55
+aaa new-model
+aaa authentication login default group tacacs+ local
 line console 0
 login authentication default
 ```
