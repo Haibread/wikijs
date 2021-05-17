@@ -2,7 +2,7 @@
 title: Configure your devices
 description: 
 published: true
-date: 2021-05-17T08:52:17.076Z
+date: 2021-05-17T09:11:09.966Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-17T08:48:49.689Z
