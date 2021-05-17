@@ -2,7 +2,7 @@
 title: Hardening device
 description: 
 published: true
-date: 2021-05-17T08:55:21.414Z
+date: 2021-05-17T08:56:00.049Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-17T08:38:53.446Z
@@ -72,4 +72,13 @@ switchport port-security
 switchport port-security violation shutdown
 switchport port-security mac-address sicky
 switchport port-security maximum 2
+```
+
+## Setup trunk, disable DTP and configure Native vlan
+
+```
+int range fa0/23-24
+switchport mode trunk
+switchport nonegitiate
+switchport trunk native vlan 50
 ```
