@@ -2,7 +2,7 @@
 title: Configure your devices
 description: 
 published: true
-date: 2021-05-17T08:51:30.227Z
+date: 2021-05-17T08:52:17.076Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-17T08:48:49.689Z
@@ -31,7 +31,7 @@ ntp update-calendar
 service timestamps log datetime msec
 ```
 
-## Configure syslog server
+## Configure syslog server + disable login on retries
 
 ```
 logging host 172.16.25.2
