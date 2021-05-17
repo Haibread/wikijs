@@ -2,7 +2,7 @@
 title: Hardening device
 description: 
 published: true
-date: 2021-05-17T08:56:00.049Z
+date: 2021-05-17T09:11:30.980Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-17T08:38:53.446Z
