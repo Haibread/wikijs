@@ -2,7 +2,7 @@
 title: Hardening device
 description: 
 published: true
-date: 2021-05-17T08:44:26.325Z
+date: 2021-05-17T08:45:12.651Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-17T08:38:53.446Z
@@ -38,4 +38,10 @@ interface s0/0/0
 ## Disable CDP
 ```
 no cdp enable
+```
+
+## Disable logins for 30 seconds after 3 failed login attempts within 60 seconds
+
+```
+login block-for 30 attempts 3 within 60
 ```
