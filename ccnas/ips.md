@@ -2,7 +2,7 @@
 title: Cisco IOS IPS
 description: 
 published: true
-date: 2021-05-17T08:58:12.261Z
+date: 2021-05-17T09:10:22.581Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-17T08:58:12.261Z
