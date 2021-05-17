@@ -2,7 +2,7 @@
 title: Hardening device
 description: 
 published: true
-date: 2021-05-17T08:45:12.651Z
+date: 2021-05-17T08:53:55.784Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-17T08:38:53.446Z
@@ -45,3 +45,14 @@ no cdp enable
 ```
 login block-for 30 attempts 3 within 60
 ```
+
+## Management ACL
+
+```
+access-list 12 permit 1.2.3.4
+line vty 0 15
+access-class 12 in
+```
+
+# Switch
+
