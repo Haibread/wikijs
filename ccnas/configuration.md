@@ -2,7 +2,7 @@
 title: Configure your devices
 description: 
 published: true
-date: 2021-05-17T08:50:04.527Z
+date: 2021-05-17T08:51:30.227Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-17T08:48:49.689Z
@@ -21,4 +21,33 @@ ip ssh authentication-retries 2
 line vty 0 15
 transport input ssh
 exit
+```
+
+## Configure ntp client
+
+```
+ntp server 172.16.25.2 key 0
+ntp update-calendar
+service timestamps log datetime msec
+```
+
+## Configure syslog server
+
+```
+logging host 172.16.25.2
+login block-for 30 attempts 3 within 60
+login on-failure log
+login on-success log
+```
+
+## Connect to AAA
+
+```
+aaa new-model
+radius-server hst 172.16.25.2 key corpradius
+aaa autentication login default group radius local
+line vty 0 4
+login authentication default
+line console 0
+login authentication default
 ```
