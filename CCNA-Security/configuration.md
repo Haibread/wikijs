@@ -2,7 +2,7 @@
 title: Configure your devices
 description: 
 published: true
-date: 2021-05-17T09:17:33.589Z
+date: 2021-05-17T09:18:28.374Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-17T08:48:49.689Z
@@ -46,6 +46,11 @@ logging host 172.16.25.2
 login block-for 30 attempts 3 within 60
 login on-failure log
 login on-success log
+```
+
+Timestamps to msec 
+```
+service timestamps log datetime msec
 ```
 
 ## Connect to AAA
