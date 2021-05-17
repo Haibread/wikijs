@@ -2,7 +2,7 @@
 title: Zone-base Policy Firewall
 description: 
 published: true
-date: 2021-05-17T09:05:28.772Z
+date: 2021-05-17T09:11:57.149Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-17T09:03:16.840Z
