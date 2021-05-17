@@ -2,7 +2,7 @@
 title: Configure your devices
 description: 
 published: true
-date: 2021-05-17T09:11:09.966Z
+date: 2021-05-17T09:17:33.589Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-17T08:48:49.689Z
@@ -29,6 +29,14 @@ exit
 ntp server 172.16.25.2 key 0
 ntp update-calendar
 service timestamps log datetime msec
+```
+
+And with authentication
+
+```
+ntp authenticate
+ntp trusted-key 1
+ntp authentication-key 1 md5 NTPpa55
 ```
 
 ## Configure syslog server + disable login on retries
