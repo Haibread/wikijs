@@ -2,7 +2,7 @@
 title: ASA Basic Configuration
 description: 
 published: true
-date: 2021-05-25T06:40:58.209Z
+date: 2021-05-25T06:43:04.956Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-25T06:05:00.562Z
@@ -57,4 +57,28 @@ dateCreated: 2021-05-25T06:05:00.562Z
 (config-pmap-c)# inspect icmp
 (config-pmap-c)# exit
 (config)# service-policy global_policy global
+```
+
+# Configure DHCP, AAA and SSH
+## DHCP
+
+```
+(config)# dhcpd address 192.168.1.5-192.168.1.36 inside
+(config)# dhcpd dns 209.165.201.2 interface inside
+(config)# dhcpd enable inside
+```
+
+## AAA
+```
+(config)# username admin password Superp@ssword
+(config)# aaa authentication ssh console LOCAL
+```
+
+## SSH
+
+```
+(config)# crypto key generate rsa modulus 1024
+(config)# ssh 192.168.1.0 255.255.255.0 inside
+(config)# ssh 172.16.3.3 255.255.255.255 outside
+(config)# ssh timeout 10
 ```
