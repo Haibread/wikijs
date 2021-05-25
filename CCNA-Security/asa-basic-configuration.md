@@ -2,7 +2,7 @@
 title: ASA Basic Configuration
 description: 
 published: true
-date: 2021-05-25T06:33:31.794Z
+date: 2021-05-25T06:34:41.989Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-25T06:05:00.562Z
@@ -29,4 +29,10 @@ dateCreated: 2021-05-25T06:05:00.562Z
 (config-if)# nameif outside
 (config-if)# ip address 209.165.200.226 255.255.255.248
 (config-if)# security-level 0
+```
+
+## Configure routes
+
+```
+(config)# route outside 0.0.0.0 0.0.0.0 209.165.200.225
 ```
