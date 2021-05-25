@@ -2,7 +2,7 @@
 title: ASA Basic Configuration
 description: 
 published: true
-date: 2021-05-25T06:44:53.242Z
+date: 2021-05-25T06:45:19.335Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-25T06:05:00.562Z
@@ -92,4 +92,7 @@ dateCreated: 2021-05-25T06:05:00.562Z
 (config-if)# no forward interface vlan 1
 (config-if)# nameif dmz
 (config-if)# security-level 70
+
+(config-if)# interface Ethernet0/2
+(config-if)# switchport access vlan 3
 ```
