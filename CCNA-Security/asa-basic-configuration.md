@@ -2,7 +2,7 @@
 title: ASA Basic Configuration
 description: 
 published: true
-date: 2021-05-25T06:46:52.154Z
+date: 2021-05-25T07:09:15.584Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-25T06:05:00.562Z
@@ -65,6 +65,7 @@ dateCreated: 2021-05-25T06:05:00.562Z
 ```
 (config)# dhcpd address 192.168.1.5-192.168.1.36 inside
 (config)# dhcpd dns 209.165.201.2 interface inside
+(config)# dhcpd option 3 ip 192.168.10.1
 (config)# dhcpd enable inside
 ```
 
