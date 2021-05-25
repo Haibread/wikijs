@@ -2,7 +2,7 @@
 title: Layer 2 Security
 description: 
 published: true
-date: 2021-05-25T05:40:31.074Z
+date: 2021-05-25T05:41:26.343Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-25T05:40:31.074Z
@@ -37,6 +37,7 @@ A(config)# interface range f0/1 - 4
 (config-if-range)# spanning-tree guard root
 ```
 ## Port Security
+### Enable Port Security
 ```
 (config)# interface range f0/1 - 22
 (config-if-range)# switchport mode access
@@ -44,4 +45,9 @@ A(config)# interface range f0/1 - 4
 (config-if-range)# switchport port-security maximum 2
 (config-if-range)# switchport port-security violation shutdown
 (config-if-range)# switchport port-security mac-address sticky
+```
+### Shutdown unused ports
+```
+(config)# interface range f0/5 - 22
+(config-if-range)# shutdown
 ```
