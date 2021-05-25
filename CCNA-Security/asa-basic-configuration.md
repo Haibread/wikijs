@@ -2,7 +2,7 @@
 title: ASA Basic Configuration
 description: 
 published: true
-date: 2021-05-25T06:45:19.335Z
+date: 2021-05-25T06:46:52.154Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-25T06:05:00.562Z
@@ -95,4 +95,21 @@ dateCreated: 2021-05-25T06:05:00.562Z
 
 (config-if)# interface Ethernet0/2
 (config-if)# switchport access vlan 3
+```
+
+## Static NAT
+
+```
+(config)# object network dmz-server
+(config-network-object)# host 192.168.2.3
+(config-network-object)# nat (dmz,outside) static 209.165.200.227
+(config-network-object)# exit
+```
+
+## ACL to allow from DMZ to Internet
+
+```
+(config)# access-list OUTSIDE-DMZ permit icmp any host 192.168.2.3
+(config)# access-list OUTSIDE-DMZ permit tcp any host 192.168.2.3 eq 80
+(config)# access-group OUTSIDE-DMZ in interface outside
 ```
