@@ -2,7 +2,7 @@
 title: IPsec VPN
 description: 
 published: true
-date: 2021-05-25T06:01:17.898Z
+date: 2021-05-25T06:02:17.153Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-25T05:50:51.885Z
@@ -27,7 +27,7 @@ Ressources for the VPN Setup :
 (config)# access-list 110 permit ip 192.168.1.0 0.0.0.255 192.168.3.0 0.0.0.255
 ```
 
-## Configure IKE Phase 1 ISAKMP on both Routers
+## Configure IKE Phase 1 ISAKMP 
 ```
 (config)# crypto isakmp policy 10
 (config-isakmp)# encryption aes 256
@@ -65,4 +65,18 @@ Ressources for the VPN Setup :
 ## Enable correct license on Router
 ```
 (config)# license boot module c1900 technology-package securityk9
+```
+
+## Setup ACL for traffic to go in the VPN
+```
+(config)# access-list 110 permit ip 192.168.3.0 0.0.0.255 192.168.1.0 0.0.0.255
+```
+## Configure IKE Phase 1 ISAKMP 
+```
+(config)# crypto isakmp policy 10
+(config-isakmp)# encryption aes 256
+(config-isakmp)# authentication pre-share
+(config-isakmp)# group 5
+(config-isakmp)# exit
+(config)# crypto isakmp key vpnpa55 address 10.1.1.2
 ```
