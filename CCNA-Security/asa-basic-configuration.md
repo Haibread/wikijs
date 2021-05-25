@@ -2,7 +2,7 @@
 title: ASA Basic Configuration
 description: 
 published: true
-date: 2021-05-25T06:43:04.956Z
+date: 2021-05-25T06:44:53.242Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-25T06:05:00.562Z
@@ -81,4 +81,15 @@ dateCreated: 2021-05-25T06:05:00.562Z
 (config)# ssh 192.168.1.0 255.255.255.0 inside
 (config)# ssh 172.16.3.3 255.255.255.255 outside
 (config)# ssh timeout 10
+```
+
+# Configure DMZ, NAT and ACLs
+
+## DMZ
+```
+(config)# interface vlan 3
+(config-if)# ip address 192.168.2.1 255.255.255.0
+(config-if)# no forward interface vlan 1
+(config-if)# nameif dmz
+(config-if)# security-level 70
 ```
