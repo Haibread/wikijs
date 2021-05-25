@@ -2,7 +2,7 @@
 title: IPsec VPN
 description: 
 published: true
-date: 2021-05-25T06:03:01.753Z
+date: 2021-05-25T06:03:19.568Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-25T05:50:51.885Z
@@ -96,4 +96,10 @@ Ressources for the VPN Setup :
 (config-crypto-map)# set transform-set VPN-SET
 (config-crypto-map)# match address 110
 (config-crypto-map)# exit
+```
+
+### Configure the crypto map to use outgoing interface
+```
+(config)# interface s0/0/1
+(config-if)# crypto map VPN-MAP
 ```
