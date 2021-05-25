@@ -2,7 +2,7 @@
 title: ASA Basic Configuration
 description: 
 published: true
-date: 2021-05-25T07:10:31.469Z
+date: 2021-05-25T07:11:07.902Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-25T06:05:00.562Z
@@ -16,6 +16,15 @@ dateCreated: 2021-05-25T06:05:00.562Z
 (config)# domain-name ccnasecurity.com
 (config)# enable password ciscoenpa55
 (config)# clock set 13:52:51 June 10 2015
+```
+
+## Setup NTP
+
+```
+(config)# ntp authenticate
+(config)# ntp authentication-key 1 md5 corpkey
+(config)# ntp server 192.168.10.10
+(config)# ntp trusted-key 1
 ```
 
 ## Configure interfaces
