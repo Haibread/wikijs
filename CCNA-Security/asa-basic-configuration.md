@@ -2,7 +2,7 @@
 title: ASA Basic Configuration
 description: 
 published: true
-date: 2021-05-25T06:34:41.989Z
+date: 2021-05-25T06:40:58.209Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-25T06:05:00.562Z
@@ -35,4 +35,26 @@ dateCreated: 2021-05-25T06:05:00.562Z
 
 ```
 (config)# route outside 0.0.0.0 0.0.0.0 209.165.200.225
+```
+
+# Setup PAT
+
+```
+(config)# object network inside-net
+(config-network-object)# subnet 192.168.1.0 255.255.255.0
+(config-network-object)# nat (inside,outside) dynamic interface
+(config-network-object)# end
+```
+
+# Traffic inspection
+
+```
+(config)# class-map inspection_default
+(config-cmap)# match default-inspection-traffic
+(config-cmap)# exit
+(config)# policy-map global_policy
+(config-pmap)# class inspection_default
+(config-pmap-c)# inspect icmp
+(config-pmap-c)# exit
+(config)# service-policy global_policy global
 ```
