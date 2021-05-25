@@ -2,7 +2,7 @@
 title: IPsec VPN
 description: 
 published: true
-date: 2021-05-25T06:00:24.284Z
+date: 2021-05-25T06:01:17.898Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-25T05:50:51.885Z
@@ -59,4 +59,10 @@ Ressources for the VPN Setup :
 ```
 (config)# interface s0/0/0
 (config-if)# crypto map VPN-MAP
+```
+
+# Configure R3
+## Enable correct license on Router
+```
+(config)# license boot module c1900 technology-package securityk9
 ```
