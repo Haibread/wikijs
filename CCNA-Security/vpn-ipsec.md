@@ -2,7 +2,7 @@
 title: IPsec VPN
 description: 
 published: true
-date: 2021-05-25T06:02:17.153Z
+date: 2021-05-25T06:03:01.753Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-25T05:50:51.885Z
@@ -79,4 +79,21 @@ Ressources for the VPN Setup :
 (config-isakmp)# group 5
 (config-isakmp)# exit
 (config)# crypto isakmp key vpnpa55 address 10.1.1.2
+```
+
+## Configure IKE Phase 2 IPsec policy
+### Create the transform-set
+
+```
+(config)# crypto ipsec transform-set VPN-SET esp-aes esp-sha-hmac
+```
+
+### Create the crypto map
+```
+(config)# crypto map VPN-MAP 10 ipsec-isakmp
+(config-crypto-map)# description VPN connection to R1
+(config-crypto-map)# set peer 10.1.1.2
+(config-crypto-map)# set transform-set VPN-SET
+(config-crypto-map)# match address 110
+(config-crypto-map)# exit
 ```
