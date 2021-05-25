@@ -2,7 +2,7 @@
 title: IPsec VPN
 description: 
 published: true
-date: 2021-05-25T06:03:19.568Z
+date: 2021-05-25T08:05:45.819Z
 tags: 
 editor: markdown
 dateCreated: 2021-05-25T05:50:51.885Z
@@ -102,4 +102,19 @@ Ressources for the VPN Setup :
 ```
 (config)# interface s0/0/1
 (config-if)# crypto map VPN-MAP
+```
+
+# Additional GRE
+
+```
+interface Tunnel1
+ ip address 172.16.1.1 255.255.255.0
+ tunnel source s0/0/0
+ tunnel destination 11.1.3.2
+```
+```
+interface Tunnel1
+ ip address 172.16.1.2 255.255.255.0
+ tunnel source 11.1.3.2
+ tunnel destination 11.1.2.100
 ```
